@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oms.dao.TenantRepo;
+import com.oms.entity.Asset;
 import com.oms.entity.Tenant;
 
 @Service
@@ -49,10 +50,18 @@ public class TenantService {
 		return tenantRepo.save(tenant);
 	}
 	
+	public Tenant addAsset(String id, List<Asset> assets)
+	{
+		Tenant tenant = tenantRepo.findOne(id);
+		tenant.setAssets(assets);
+		return tenantRepo.save(tenant);
+	}
+	
 	public void deleteTenant(String id)
 	{
 		tenantRepo.delete(id);
 	}
+	
 	
 	
 

@@ -14,7 +14,7 @@ import com.oms.entity.Tenant;
 import com.oms.service.TenantService;
 
 @RestController
-@RequestMapping(value = "/tenant")
+@RequestMapping(value = "/oms")
 public class TenantController {
 
 	

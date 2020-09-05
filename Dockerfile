@@ -1,5 +1,5 @@
-FROM frolvlad/alpine-oraclejdk8
+FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-ADD  build/libs/flightSearch-0.0.1-SNAPSHOT.jar search.jar
+ADD  build/libs/oms-md-tenant-svc-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","/search.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
