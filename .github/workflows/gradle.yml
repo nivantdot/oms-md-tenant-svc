@@ -52,4 +52,14 @@ jobs:
         dockerfile: Dockerfile
         tags: 1.0.0
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}      
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        
+  test_no_input:
+    runs-on: ubuntu-latest
+    name: no input
+    needs: publish
+    steps:
+      - id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+      - run: aws --version
+        shell: bash
