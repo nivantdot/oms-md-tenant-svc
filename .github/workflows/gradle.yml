@@ -33,5 +33,6 @@ jobs:
       with:
         image: shk2123/actionstest:1.0.0
         registry: docker.io
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}      
