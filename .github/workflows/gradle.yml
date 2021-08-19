@@ -63,3 +63,9 @@ jobs:
         uses: unfor19/install-aws-cli-action@v1
       - run: aws --version
         shell: bash
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.1.22'
+      - name: php version check
+        run: php -v
